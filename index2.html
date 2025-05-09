@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supriya Andhale | ML & AI Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #004080;
+            --secondary-color: #0078d7;
+            --text-color: #333;
+            --light-color: #f4f4f4;
+            --dark-color: #001f3f;
+            --border-color: #ddd;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .skill-category h3 {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .skill-list {
+            padding: 1.5rem;
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .experience-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            width: calc(50% - 2rem);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: calc(50% - 14px);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: calc(50% - 14px);
+            transform: translateX(50%);
+        }
+        
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* New Project Styles (Inspired by rajag0pal.github.io) */
+        .projects-section {
+            background-color: #f0f8ff;
+            padding: 5rem 0;
+        }
+        
+        .projects-showcase {
+            margin-bottom: 5rem;
+        }
+        
+        .project-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .project-video-container {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            background-color: #e0e0e0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .video-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: #666;
+        }
+        
+        .video-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details {
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .project-details h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .project-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .project-link i {
+            margin-right: 0.5rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .project-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Achievements Section */
+        .achievements-container {
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .achievement-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievement-title i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .achievement-list li {
+            position: relative;
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+        }
+
+        .achievement-list li::before {
+            content: "•";
+            position: absolute;
+            left: -0.8rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Light animation for the header */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color), #005792);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .experience-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-item .timeline-content::before {
+                left: 30px !important;
+                transform: translateX(-50%) !important;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .project-video-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container header-content">
+            <img src="/api/placeholder/400/400" alt="Supriya Andhale" class="profile-img">
+            <h1>Supriya Andhale</h1>
+            <p class="tagline">ML & AI Professional | Data Monetization Specialist</p>
+            <p>Leading ML and GenAI Solutions with Cow Data Monetization</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/supriyaandhale" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:spote210@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:9423710210"><i class="fas fa-phone"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Key Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Section (Now First) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Featured Project Showcase -->
+            <div class="projects-showcase">
+                <!-- Featured Project 1 -->
+                <div class="project-feature">
+                    <div class="project-video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <p>Add Intro Video for Multilingual GenAI Chatbot</p>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Multilingual GenAI Chatbot</h3>
+                        <p>A voice and text enabled chatbot using AWS Bedrock and LangChain to provide real-time assistance to farmers in multiple languages. The system utilizes advanced vector indexing with Amazon Titan and integrates with AWS services for comprehensive data handling.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS Bedrock</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Amazon Lex</span>
+                            <span class="tech-tag">Vector DB</span>
+                            <span class="tech-tag">Multilingual NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-globe"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Project 2 -->
+                <div class="project-feature">
+                    <div class="project-video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <p>Add Intro Video for Cow Movement Tracking System</p>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Cow Movement Tracking System</h3>
+                        <p>Advanced deep learning solution using YOLO and TensorFlow to automatically detect and track cattle movement from video feeds. The system incorporates OpenCV for image processing and supports automated metadata extraction using EasyOCR technology.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLO</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">EasyOCR</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-globe"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Project 3 -->
+                <div class="project-feature">
+                    <div class="project-video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <p>Add Intro Video for ViT-Based Cattle Identification</p>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>ViT-Based Cattle Identification</h3>
+                        <p>State-of-the-art cattle identification system utilizing Vision Transformer models to achieve 98.5% accuracy in real-time environments. The system was optimized through 14 epochs of training and includes AutoImageProcessor for seamless preprocessing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vision Transformers</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Edge Computing</span>
+                            <span class="tech-tag">AutoImageProcessor</span>
+                            <span class="tech-tag">Real-time Detection</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-globe"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other Projects Grid -->
+            <h3 class="section-title">Other Notable Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/api/placeholder/600/400" alt="Command Centre" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Livestock Command Centre</h3>
+                        <p>Intelligent dashboard for monitoring farm health metrics, triggering alerts, and improving operational efficiency.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/600/400" alt="AI SQL Agent" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Powered SQL Agent</h3>
+                        <p>Intelligent system that generates, explains, and optimizes SQL procedures using LangChain and LlamaIndex.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LangChain</span>
+                            <span class="project-tag">LlamaIndex</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/600/400" alt="Feed Impact Analysis" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Feed Impact Analysis Platform</h3>
+                        <p>Data monetization solution that correlates mineral mixture usage with rumination and milk yield improvements.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AWS IoT Core</span>
+                            <span class="project-tag">TensorFlow</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a seasoned Machine Learning and AI professional with over 5 years of experience specializing in livestock monitoring and data monetization solutions. My expertise spans production-scale ML, GenAI applications, deep learning, and cloud infrastructure optimization. I'm passionate about transforming agricultural technology through data-driven solutions that deliver measurable business value.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 2021 - Present</div>
+                        <h3 class="timeline-title">Senior Manager - Products & Data</h3>
+                        <p>Areete Business Solutions, Pune, Maharashtra</p>
+                        <ul>
+                            <li>Lead ML and GenAI solutions for livestock monitoring</li>
+                            <li>Develop and deploy production-grade ML models</li>
+                            <li>Build AI-powered applications using AWS Bedrock, LangChain</li>
+                            <li>Design and implement data monetization strategies</li>
+                            <li>Optimize cloud infrastructure and reduce costs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2019 - November 2021</div>
+                        <h3 class="timeline-title">Data Infrastructure Engineer</h3>
+                        <p>A3 Services, Pune, Maharashtra</p>
+                        <ul>
+                            <li>Optimized system scalability and performance on AWS</li>
+                            <li>Managed SQL and NoSQL databases for reliability</li>
+                            <li>Secured and configured cloud networks</li>
+                            <li>Automated infrastructure using AWS services</li>
+                            <li>Implemented monitoring for proactive issue detection</li>
+                            <li>Optimized cloud costs through resource analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <h3 class="achievement-title"><i class="fas fa-robot"></i>Production-Scale Machine Learning for Livestock Monitoring</h3>
+                    <ul class="achievement-list">
+                        <li>Built and deployed ML models (XGBoost, LightGBM, Unsupervised) for live cow behavior prediction</li>
+                        <li>Delivered 3+ years of production ML for 3,000+ IoT devices with 10-min interval data</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <h3 class="achievement-title"><i class="fas fa-comments"></i>GenAI-Based Multilingual Chatbot for Farmers</h3>
+                    <ul class="achievement-list">
+                        <li>Designed a GenAI chatbot using AWS Bedrock, LangChain, and Lex to answer cow-related queries via voice or text in English/Hindi</li>
+                        <li>Automated data scraping and categorized ingestion into S3, with continuous vector indexing using Amazon Titan</li>
+                        <li>Used Bedrock Agents and Action Groups with Lambda to fetch real-time insights from structured and unstructured sources</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <h3 class="achievement-title"><i class="fas fa-video"></i>Cow Movement Tracking (Deep Learning)</h3>
+                    <ul class="achievement-list">
+                        <li>Automated cow detection from videos using YOLO; enabled user-verified frame selection and AWS S3 uploads</li>
+                        <li>Built CNN model with TensorFlow & OpenCV to analyze cattle movement from image frames</li>
+                        <li>Integrated EasyOCR for tag extraction; supported metadata entry and identification</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <h3 class="achievement-title"><i class="fas fa-id-card"></i>Advanced Cattle Identification using Deep Learning & Vision Transformers</h3>
+                    <ul class="achievement-list">
+                        <li>Explored facial recognition (FaceNet, VGGFace) and LiDAR-based 3D reconstruction for cattle identification</li>
+                        <li>Adopted Vision Transformer (ViT) for object detection with AutoImageProcessor for seamless preprocessing</li>
+                        <li>Achieved 98.5% accuracy after training ViT model for 14 epochs, optimizing for edge and real-time scenarios</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <h3 class="achievement-title"><i class="fas fa-chart-line"></i>Data Monetization & Intelligent Dashboards</h3>
+                    <ul class="achievement-list">
+                        <li><strong>Command Centre (Internal Ops):</strong> Built using Python, PostgreSQL to monitor farm health, trigger alerts, and improve issue resolution by 40%</li>
+                        <li><strong>Sales & Cooperative Dashboards:</strong> Developed with BigQuery and Data Studio to track usage trends and repeat orders, boosting cooperative reorders by 30%</li>
+                        <li><strong>Direct Monetization — Feed Impact Analysis:</strong> Used AWS IoT Core, TensorFlow, and Python to correl
